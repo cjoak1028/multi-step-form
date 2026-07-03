@@ -13,8 +13,10 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;
+    --text-2xl: 1.5rem;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
@@ -177,9 +179,6 @@
   .absolute {
     position: absolute;
   }
-  .relative {
-    position: relative;
-  }
   .static {
     position: static;
   }
@@ -192,20 +191,8 @@
   .m-auto {
     margin: auto;
   }
-  .-mt-18 {
-    margin-top: calc(var(--spacing) * -18);
-  }
-  .-mt-18\.75 {
-    margin-top: calc(var(--spacing) * -18.75);
-  }
   .-mt-\[4\.688rem\] {
     margin-top: calc(4.688rem * -1);
-  }
-  .mt-8 {
-    margin-top: calc(var(--spacing) * 8);
-  }
-  .mr-0 {
-    margin-right: 0;
   }
   .contents {
     display: contents;
@@ -219,32 +206,12 @@
   .table {
     display: table;
   }
-  .size-8\.25 {
-    width: calc(var(--spacing) * 8.25);
-    height: calc(var(--spacing) * 8.25);
-  }
-  .size-10 {
-    width: calc(var(--spacing) * 10);
-    height: calc(var(--spacing) * 10);
-  }
   .size-\[2\.063rem\] {
     width: 2.063rem;
     height: 2.063rem;
   }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
-  .h-40 {
-    height: calc(var(--spacing) * 40);
-  }
   .h-43 {
     height: calc(var(--spacing) * 43);
-  }
-  .h-full {
-    height: 100%;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -255,12 +222,6 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[21\.438rem\] {
-    max-width: 21.438rem;
-  }
-  .shrink-0 {
-    flex-shrink: 0;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -269,9 +230,6 @@
   }
   .flex-col {
     flex-direction: column;
-  }
-  .flex-row {
-    flex-direction: row;
   }
   .items-center {
     align-items: center;
@@ -310,9 +268,6 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .bg-\[url\(\.\/assets\/images\/bg-sidebar-mobile\.svg\)\] {
-    background-image: url(./assets/images/bg-sidebar-mobile.svg);
-  }
   .bg-\[url\(\/assets\/images\/bg-sidebar-mobile\.svg\)\] {
     background-image: url(/assets/images/bg-sidebar-mobile.svg);
   }
@@ -336,14 +291,6 @@
   }
   .font-ubuntu {
     font-family: var(--font-ubuntu);
-  }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-sm\/\[1\.2\] {
-    font-size: var(--text-sm);
-    line-height: 1.2;
   }
   .text-sm\/\[120\%\] {
     font-size: var(--text-sm);
@@ -413,29 +360,14 @@
       height: auto;
     }
   }
-  .md\:w-\[12\.875rem\] {
-    @media (width >= 48rem) {
-      width: 12.875rem;
-    }
-  }
   .md\:w-\[calc\(100\%-5\.125rem\)\] {
     @media (width >= 48rem) {
       width: calc(100% - 5.125rem);
     }
   }
-  .md\:w-auto {
-    @media (width >= 48rem) {
-      width: auto;
-    }
-  }
   .md\:max-w-\[42\.875rem\] {
     @media (width >= 48rem) {
       max-width: 42.875rem;
-    }
-  }
-  .md\:max-w-\[171\.5rem\] {
-    @media (width >= 48rem) {
-      max-width: 171.5rem;
     }
   }
   .md\:shrink-0 {
@@ -530,6 +462,56 @@
   font-weight: 700;
   src: url("/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
 }
+.text-preset-1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+.text-preset-2 {
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+.text-preset-3-regular {
+  font-size: var(--text-base);
+  line-height: 1.5;
+  --tw-font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-normal);
+}
+.text-preset-3-medium {
+  font-size: var(--text-base);
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+}
+.text-preset-4-regular {
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-normal);
+}
+.text-preset-4-medium {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+}
+.text-preset-4-bold {
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  --tw-tracking: 0.063rem;
+  letter-spacing: 0.063rem;
+}
+.text-preset-5 {
+  font-size: var(--text-xs);
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-normal);
+}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -564,6 +546,10 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -575,6 +561,7 @@
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
+      --tw-tracking: initial;
     }
   }
 }
