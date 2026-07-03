@@ -26,39 +26,67 @@
       }
     </style>
   </head>
-  <body class="font-ubuntu bg-blue-100">
-    <main class="flex flex-col">
-      <aside class="bg-[url(/assets/images/bg-sidebar-mobile.svg)] h-43">
-        <ol class="flex gap-4 text-white justify-center mt-8">
-          <li>
+  <body class="font-ubuntu min-h-screen bg-blue-100 md:flex md:items-center">
+    <main
+      class="flex flex-col md:flex-row md:bg-white md:p-4 md:w-[calc(100%-5.125rem)] md:max-w-[42.875rem] md:m-auto md:rounded-2xl"
+    >
+      <aside
+        class="bg-[url(/assets/images/bg-sidebar-mobile.svg)] md:bg-[url(/assets/images/bg-sidebar-desktop.svg)] py-8 md:py-10 px-[1.688rem] h-43 md:h-auto md:shrink-0 md:rounded-[0.625rem]"
+      >
+        <ol class="flex gap-4 md:gap-8 text-white justify-center md:flex-col">
+          <li class="flex items-center gap-4">
             <span
               class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
               >1</span
             >
+            <div class="hidden md:block">
+              <p class="uppercase text-blue-300 text-xs/[120%] font-normal">
+                Step 1
+              </p>
+              <p class="uppercase text-sm/[120%] font-bold">Your info</p>
+            </div>
           </li>
-          <li>
+          <li class="flex items-center gap-4">
             <span
               class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
               >2</span
             >
+            <div class="hidden md:block">
+              <p class="uppercase text-blue-300 text-xs/[120%] font-normal">
+                Step 2
+              </p>
+              <p class="uppercase text-sm/[120%] font-bold">Select plan</p>
+            </div>
           </li>
-          <li>
+          <li class="flex items-center gap-4">
             <span
               class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
               >3</span
             >
+            <div class="hidden md:block">
+              <p class="uppercase text-blue-300 text-xs/[120%] font-normal">
+                Step 3
+              </p>
+              <p class="uppercase text-sm/[120%] font-bold">Add-ons</p>
+            </div>
           </li>
-          <li>
+          <li class="flex items-center gap-4">
             <span
               class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
               >4</span
             >
+            <div class="hidden md:block">
+              <p class="uppercase text-blue-300 text-xs/[120%] font-normal">
+                Step 4
+              </p>
+              <p class="uppercase text-sm/[120%] font-bold">Summary</p>
+            </div>
           </li>
         </ol>
       </aside>
       <form
         method="post"
-        class="px-6 py-8 w-[calc(100%-2rem)] m-auto -mt-[4.688rem] bg-white rounded-[0.625rem]"
+        class="px-6 md:px-[3.625rem] py-8 md:py-4 w-[calc(100%-2rem)] m-auto -mt-[4.688rem] md:mt-0 bg-white rounded-[0.625rem]"
       >
         <fieldset>
           <legend>Personal info</legend>
@@ -95,15 +123,17 @@
             />
           </label>
         </fieldset>
-      </form>
-      <div class="bg-white p-4 flex justify-end absolute w-full bottom-0">
-        <button
-          type="button"
-          class="bg-blue-950 text-white font-sm/[150%] font-medium px-4 py-[0.594rem] rounded-sm cursor-pointer"
+        <div
+          class="bg-white p-4 flex justify-end absolute w-full bottom-0 left-0 md:static md:p-0 md:mt-21"
         >
-          Next Step
-        </button>
-      </div>
+          <button
+            type="button"
+            class="bg-blue-950 text-white font-sm/[150%] font-medium px-4 py-[0.594rem] rounded-sm cursor-pointer"
+          >
+            Next Step
+          </button>
+        </div>
+      </form>
     </main>
 
     <!-- Sidebar start -->
