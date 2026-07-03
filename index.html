@@ -26,60 +26,86 @@
       }
     </style>
   </head>
-  <body class="font-ubuntu">
-    <div class="bg-[url(/assets/images/bg-sidebar-mobile.svg)]"></div>
-    <ol>
-      <li>
-        <span>1</span>
-      </li>
-      <li>
-        <span>2</span>
-      </li>
-      <li>
-        <span>3</span>
-      </li>
-      <li>
-        <span>4</span>
-      </li>
-    </ol>
-    <form method="post">
-      <fieldset>
-        <legend>Personal info</legend>
-        <p>Please provide your name, email address, and phone number.</p>
-        <label for="name">
-          Name
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="e.g. Stephen King"
-            required
-          />
-        </label>
-        <label for="email">
-          Email Address
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="e.g. stephenking@lorem.com"
-            required
-          />
-        </label>
-        <label for="phone-number">
-          Phone Number
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="e.g. +1 234 567 890"
-            autocomplete="tel"
-            required
-          />
-        </label>
-      </fieldset>
-      <button type="button">Next Step</button>
-    </form>
+  <body class="font-ubuntu bg-blue-100">
+    <main class="flex flex-col">
+      <aside class="bg-[url(/assets/images/bg-sidebar-mobile.svg)] h-43">
+        <ol class="flex gap-4 text-white justify-center mt-8">
+          <li>
+            <span
+              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
+              >1</span
+            >
+          </li>
+          <li>
+            <span
+              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
+              >2</span
+            >
+          </li>
+          <li>
+            <span
+              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
+              >3</span
+            >
+          </li>
+          <li>
+            <span
+              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white font-bold text-sm/[120%]"
+              >4</span
+            >
+          </li>
+        </ol>
+      </aside>
+      <form
+        method="post"
+        class="px-6 py-8 w-[calc(100%-2rem)] m-auto -mt-[4.688rem] bg-white rounded-[0.625rem]"
+      >
+        <fieldset>
+          <legend>Personal info</legend>
+          <p>Please provide your name, email address, and phone number.</p>
+          <label for="name">
+            Name
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="e.g. Stephen King"
+              required
+            />
+          </label>
+          <label for="email">
+            Email Address
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="e.g. stephenking@lorem.com"
+              required
+            />
+          </label>
+          <label for="phone-number">
+            Phone Number
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g. +1 234 567 890"
+              autocomplete="tel"
+              required
+            />
+          </label>
+        </fieldset>
+      </form>
+      <div class="bg-white p-4 flex justify-end absolute w-full bottom-0">
+        <button
+          type="button"
+          class="bg-blue-950 text-white font-sm/[150%] font-medium px-4 py-[0.594rem] rounded-sm cursor-pointer"
+        >
+          Next Step
+        </button>
+      </div>
+    </main>
+
     <!-- Sidebar start -->
 
     <!-- Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary -->
