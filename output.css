@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-ubuntu: "Ubuntu", sans-serif;
@@ -170,8 +171,30 @@
   .table {
     display: table;
   }
+  .size-10 {
+    width: calc(var(--spacing) * 10);
+    height: calc(var(--spacing) * 10);
+  }
+  .h-10 {
+    height: calc(var(--spacing) * 10);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-40 {
+    height: calc(var(--spacing) * 40);
+  }
+  .w-full {
+    width: 100%;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .bg-\[url\(\.\/assets\/images\/bg-sidebar-mobile\.svg\)\] {
+    background-image: url(./assets/images/bg-sidebar-mobile.svg);
+  }
+  .bg-\[url\(\/assets\/images\/bg-sidebar-mobile\.svg\)\] {
+    background-image: url(/assets/images/bg-sidebar-mobile.svg);
   }
   .font-ubuntu {
     font-family: var(--font-ubuntu);
