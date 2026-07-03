@@ -1,0 +1,25 @@
+{
+  "name": "multi-step-form",
+  "version": "1.0.0",
+  "description": "![Design preview for the Multi-step form coding challenge](preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjoak1028/multi-step-form.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cjoak1028/multi-step-form/issues"
+  },
+  "homepage": "https://github.com/cjoak1028/multi-step-form#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "tailwindcss": "^4.3.2"
+  }
+}
