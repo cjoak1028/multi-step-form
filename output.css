@@ -12,6 +12,7 @@
     --color-blue-300: #abbcff;
     --color-blue-950: #022959;
     --color-purple-200: #d6d9e6;
+    --color-purple-600: #483eff;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -246,6 +247,9 @@
   .items-center {
     align-items: center;
   }
+  .justify-between {
+    justify-content: space-between;
+  }
   .justify-center {
     justify-content: center;
   }
@@ -279,6 +283,9 @@
   }
   .bg-blue-950 {
     background-color: var(--color-blue-950);
+  }
+  .bg-purple-600 {
+    background-color: var(--color-purple-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -329,6 +336,12 @@
     line-height: 1.2;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+  }
+  .text-preset-3-medium {
+    font-size: var(--text-base);
+    line-height: 1.2;
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
   }
   .text-preset-3-regular {
     font-size: var(--text-base);
@@ -390,6 +403,16 @@
   .placeholder\:text-grey-500 {
     &::placeholder {
       color: var(--color-grey-500);
+    }
+  }
+  .has-data-hidden\:justify-end {
+    &:has(*[data-hidden]) {
+      justify-content: flex-end;
+    }
+  }
+  .has-data-hidden-back\:justify-end {
+    &:has(*[data-hidden-back]) {
+      justify-content: flex-end;
     }
   }
   .md\:static {
