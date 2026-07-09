@@ -1,7 +1,3 @@
-const infoForm = document.querySelector("#info-form");
-const planForm = document.querySelector("#plan-form");
-const addOnsForm = document.querySelector("#add-ons-form");
-const summaryForm = document.querySelector("#summary-form");
 const nextBtn = document.querySelector("#next-btn");
 const backBtn = document.querySelector("#back-btn");
 const confirmBtn = document.querySelector("#confirm-btn");

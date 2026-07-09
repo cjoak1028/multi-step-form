@@ -29,99 +29,80 @@
     </style> -->
   </head>
   <body
-    class="font-ubuntu min-h-screen bg-blue-100 md:flex md:items-center text-blue-950"
+    class="min-h-screen font-ubuntu bg-blue-100 text-blue-950 md:flex md:items-center"
   >
     <main
-      class="flex flex-col md:flex-row md:bg-white md:p-4 md:w-[calc(100%-5.125rem)] md:max-w-[58.75rem] md:m-auto md:rounded-2xl"
+      class="flex flex-col md:flex-row md:bg-white md:w-[calc(100%-5.125rem)] md:max-w-[58.75rem] md:h-150 md:m-auto md:rounded-2xl md:p-4"
     >
       <aside
-        class="bg-[url(/assets/images/bg-sidebar-mobile.svg)] md:bg-[url(/assets/images/bg-sidebar-desktop.svg)] py-8 md:py-10 px-[1.688rem] h-43 md:h-auto md:shrink-0 md:rounded-[0.625rem] md:w-[35%] md:max-w-[17.125rem] bg-no-repeat bg-cover bg-center"
+        class="bg-[url(/assets/images/bg-sidebar-mobile.svg)] bg-no-repeat bg-cover bg-center h-43 px-[1.688rem] py-8 md:bg-[url(/assets/images/bg-sidebar-desktop.svg)] md:shrink-0 md:rounded-[0.625rem] md:w-[35%] md:max-w-[17.125rem] md:h-auto md:py-10"
       >
-        <ol class="flex gap-4 md:gap-8 text-white justify-center md:flex-col">
-          <li
-            class="flex items-center gap-4 group"
-            data-step-item="1"
-            data-active
-          >
-            <span class="step-circle">1</span>
+        <ol class="flex justify-center gap-4 text-white md:flex-col md:gap-8">
+          <li class="group step-indicator" data-step-item="1" data-active>
+            <span class="step-indicator__circle">1</span>
             <div class="hidden md:block">
-              <p class="uppercase text-blue-300 text-preset-5">Step 1</p>
-              <p class="uppercase text-preset-4-bold">Your info</p>
+              <p class="step-indicator__heading">Step 1</p>
+              <p class="step-indicator__title">Your info</p>
             </div>
           </li>
-          <li class="flex items-center gap-4 group" data-step-item="2">
-            <span class="step-circle">2</span>
+          <li class="group step-indicator" data-step-item="2">
+            <span class="step-indicator__circle">2</span>
             <div class="hidden md:block">
-              <p class="uppercase text-blue-300 text-preset-5">Step 2</p>
-              <p class="uppercase text-preset-4-bold">Select plan</p>
+              <p class="step-indicator__heading">Step 2</p>
+              <p class="step-indicator__title">Select plan</p>
             </div>
           </li>
-          <li class="flex items-center gap-4 group" data-step-item="3">
-            <span class="step-circle">3</span>
+          <li class="group step-indicator" data-step-item="3">
+            <span class="step-indicator__circle">3</span>
             <div class="hidden md:block">
-              <p class="uppercase text-blue-300 text-preset-5">Step 3</p>
-              <p class="uppercase text-preset-4-bold">Add-ons</p>
+              <p class="step-indicator__heading">Step 3</p>
+              <p class="step-indicator__title">Add-ons</p>
             </div>
           </li>
-          <li class="flex items-center gap-4 group" data-step-item="4">
-            <span class="step-circle">4</span>
+          <li class="group step-indicator" data-step-item="4">
+            <span class="step-indicator__circle">4</span>
             <div class="hidden md:block">
-              <p class="uppercase text-blue-300 text-preset-5">Step 4</p>
-              <p class="uppercase text-preset-4-bold">Summary</p>
+              <p class="step-indicator__heading">Step 4</p>
+              <p class="step-indicator__title">Summary</p>
             </div>
           </li>
         </ol>
       </aside>
-      <div class="px-4 md:px-12 md:py-8 -mt-[4.688rem] md:mt-0 w-full">
+      <div class="-mt-[4.688rem] w-full px-4 md:mt-0 md:px-12 md:py-8">
         <form
           method="post"
-          class="md:max-w-[28.125rem] m-auto bg-white rounded-[0.625rem] px-6 py-8 md:p-0"
+          class="flex flex-col justify-between m-auto rounded-[0.625rem] h-full bg-white px-6 py-8 md:max-w-[28.125rem] md:p-0"
         >
           <fieldset id="info-form" data-step-panel="1">
-            <legend class="text-preset-2 text-blue-950 mb-2 md:text-preset-1">
-              Personal info
-            </legend>
-            <p
-              class="text-preset-3-regular text-grey-500 mb-6 md:mb-8 lg:mb-10"
-            >
+            <legend class="panel__heading">Personal info</legend>
+            <p class="panel__descr">
               Please provide your name, email address, and phone number.
             </p>
-            <label
-              class="text-preset-5 inline-block mb-2 md:text-preset-4-regular"
-              for="name"
-            >
-              Name
-            </label>
+            <label class="form-text-input__label" for="name"> Name </label>
             <input
-              class="w-full px-4 py-[0.594rem] md:py-[0.906rem] text-preset-4-medium md:text-preset-3-medium placeholder:text-grey-500 border border-purple-200 rounded-sm mb-4 md:mb-6"
+              class="form-text-input mb-4 md:mb-6"
               type="text"
               id="name"
               name="name"
               placeholder="e.g. Stephen King"
               required
             />
-            <label
-              class="text-preset-5 inline-block mb-2 md:text-preset-4-regular"
-              for="email"
-            >
+            <label class="form-text-input__label" for="email">
               Email Address
             </label>
             <input
-              class="w-full px-4 py-[0.594rem] md:py-[0.906rem] text-preset-4-medium md:text-preset-3-medium placeholder:text-grey-500 border border-purple-200 rounded-sm mb-4 md:mb-6"
+              class="form-text-input mb-4 md:mb-6"
               type="email"
               id="email"
               name="email"
               placeholder="e.g. stephenking@lorem.com"
               required
             />
-            <label
-              class="text-preset-5 inline-block mb-2 md:text-preset-4-regular"
-              for="phone-number"
-            >
+            <label class="form-text-input__label" for="phone-number">
               Phone Number
             </label>
             <input
-              class="w-full px-4 py-[0.594rem] md:py-[0.906rem] text-preset-4-medium md:text-preset-3-medium placeholder:text-grey-500 border border-purple-200 rounded-sm"
+              class="form-text-input"
               type="tel"
               id="phone"
               name="phone"
@@ -140,7 +121,7 @@
             <legend>Finishing up</legend>
           </fieldset>
           <div
-            class="bg-white p-4 flex has-data-hidden-back:justify-end justify-between absolute w-full bottom-0 left-0 md:static md:p-0 md:mt-21 lg:mt-20"
+            class="bg-white p-4 flex has-data-hidden-back:justify-end justify-between absolute w-full bottom-0 left-0 md:static md:p-0"
           >
             <button
               id="back-btn"
@@ -150,17 +131,13 @@
             >
               Go Back
             </button>
-            <button
-              id="next-btn"
-              type="button"
-              class="bg-blue-950 text-white text-preset-4-medium md:text-preset-3-medium px-4 md:px-6 py-[0.594rem] md:py-[0.906rem] rounded-sm cursor-pointer md:rounded-lg"
-            >
+            <button id="next-btn" type="button" class="bg-blue-950 form-btn">
               Next Step
             </button>
             <button
               id="confirm-btn"
               type="submit"
-              class="bg-purple-600 text-white text-preset-4-medium md:text-preset-3-medium px-4 md:px-6 py-[0.594rem] md:py-[0.906rem] rounded-sm cursor-pointer md:rounded-lg hidden"
+              class="bg-purple-600 form-btn hidden"
             >
               Confirm
             </button>
