@@ -15,8 +15,10 @@
 
     <title>Frontend Mentor | Multi-step form</title>
 
+    <script src="./script.js" defer></script>
+
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
+    <!-- <style>
       .attribution {
         font-size: 0.6875rem;
         text-align: center;
@@ -24,7 +26,7 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
-    </style>
+    </style> -->
   </head>
   <body
     class="font-ubuntu min-h-screen bg-blue-100 md:flex md:items-center text-blue-950"
@@ -83,7 +85,7 @@
           method="post"
           class="md:max-w-[28.125rem] m-auto bg-white rounded-[0.625rem] px-6 py-8 md:p-0"
         >
-          <fieldset>
+          <fieldset id="info-form" data-step="1">
             <legend class="text-preset-2 text-blue-950 mb-2 md:text-preset-1">
               Personal info
             </legend>
@@ -136,10 +138,20 @@
               required
             />
           </fieldset>
+          <fieldset id="plan-form" class="hidden" data-step="2">
+            <legend>Select your plan</legend>
+          </fieldset>
+          <fieldset id="add-ons-form" class="hidden" data-step="3">
+            <legend>Pick add-ons</legend>
+          </fieldset>
+          <fieldset id="summary-form" class="hidden" data-step="4">
+            <legend>Finishing up</legend>
+          </fieldset>
           <div
             class="bg-white p-4 flex justify-end absolute w-full bottom-0 left-0 md:static md:p-0 md:mt-21 lg:mt-20"
           >
             <button
+              id="next-btn"
               type="button"
               class="bg-blue-950 text-white font-sm/[150%] font-medium px-4 md:px-6 py-[0.594rem] md:py-[0.906rem] rounded-sm cursor-pointer md:rounded-lg"
             >
