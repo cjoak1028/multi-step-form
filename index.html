@@ -38,41 +38,33 @@
         class="bg-[url(/assets/images/bg-sidebar-mobile.svg)] md:bg-[url(/assets/images/bg-sidebar-desktop.svg)] py-8 md:py-10 px-[1.688rem] h-43 md:h-auto md:shrink-0 md:rounded-[0.625rem] md:w-[35%] md:max-w-[17.125rem] bg-no-repeat bg-cover bg-center"
       >
         <ol class="flex gap-4 md:gap-8 text-white justify-center md:flex-col">
-          <li class="flex items-center gap-4">
-            <span
-              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white text-preset-4-bold"
-              >1</span
-            >
+          <li
+            class="flex items-center gap-4 group"
+            data-step-item="1"
+            data-active
+          >
+            <span class="step-circle">1</span>
             <div class="hidden md:block">
               <p class="uppercase text-blue-300 text-preset-5">Step 1</p>
               <p class="uppercase text-preset-4-bold">Your info</p>
             </div>
           </li>
-          <li class="flex items-center gap-4">
-            <span
-              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white text-preset-4-bold"
-              >2</span
-            >
+          <li class="flex items-center gap-4 group" data-step-item="2">
+            <span class="step-circle">2</span>
             <div class="hidden md:block">
               <p class="uppercase text-blue-300 text-preset-5">Step 2</p>
               <p class="uppercase text-preset-4-bold">Select plan</p>
             </div>
           </li>
-          <li class="flex items-center gap-4">
-            <span
-              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white text-preset-4-bold"
-              >3</span
-            >
+          <li class="flex items-center gap-4 group" data-step-item="3">
+            <span class="step-circle">3</span>
             <div class="hidden md:block">
               <p class="uppercase text-blue-300 text-preset-5">Step 3</p>
               <p class="uppercase text-preset-4-bold">Add-ons</p>
             </div>
           </li>
-          <li class="flex items-center gap-4">
-            <span
-              class="flex justify-center items-center size-[2.063rem] rounded-full border border-white text-preset-4-bold"
-              >4</span
-            >
+          <li class="flex items-center gap-4 group" data-step-item="4">
+            <span class="step-circle">4</span>
             <div class="hidden md:block">
               <p class="uppercase text-blue-300 text-preset-5">Step 4</p>
               <p class="uppercase text-preset-4-bold">Summary</p>
@@ -85,7 +77,7 @@
           method="post"
           class="md:max-w-[28.125rem] m-auto bg-white rounded-[0.625rem] px-6 py-8 md:p-0"
         >
-          <fieldset id="info-form" data-step="1">
+          <fieldset id="info-form" data-step-panel="1">
             <legend class="text-preset-2 text-blue-950 mb-2 md:text-preset-1">
               Personal info
             </legend>
@@ -138,13 +130,13 @@
               required
             />
           </fieldset>
-          <fieldset id="plan-form" class="hidden" data-step="2">
+          <fieldset id="plan-form" class="hidden" data-step-panel="2">
             <legend>Select your plan</legend>
           </fieldset>
-          <fieldset id="add-ons-form" class="hidden" data-step="3">
+          <fieldset id="add-ons-form" class="hidden" data-step-panel="3">
             <legend>Pick add-ons</legend>
           </fieldset>
-          <fieldset id="summary-form" class="hidden" data-step="4">
+          <fieldset id="summary-form" class="hidden" data-step-panel="4">
             <legend>Finishing up</legend>
           </fieldset>
           <div

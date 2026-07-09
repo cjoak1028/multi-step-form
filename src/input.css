@@ -78,3 +78,17 @@
 @utility text-preset-5 {
   @apply text-xs/[1.2] font-normal;
 }
+
+/* Custom classes */
+.step-circle {
+  @apply flex justify-center items-center 
+          size-[2.063rem] 
+          rounded-full 
+          border 
+          border-white 
+          text-preset-4-bold;
+
+  @apply group-data-active:bg-blue-200
+          group-data-active:border-transparent 
+          group-data-active:text-blue-950;
+}
