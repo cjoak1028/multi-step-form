@@ -73,7 +73,7 @@
           method="post"
           class="flex flex-col justify-between m-auto rounded-[0.625rem] h-full bg-white px-6 py-8 md:max-w-[28.125rem] md:p-0"
         >
-          <fieldset id="info-form" data-step-panel="1">
+          <fieldset id="info-panel" data-step-panel="1">
             <legend class="panel__heading">Personal info</legend>
             <p class="panel__descr">
               Please provide your name, email address, and phone number.
@@ -111,13 +111,81 @@
               required
             />
           </fieldset>
-          <fieldset id="plan-form" class="hidden" data-step-panel="2">
-            <legend>Select your plan</legend>
+          <fieldset id="plan-panel" class="hidden" data-step-panel="2">
+            <legend class="panel__heading">Select your plan</legend>
+            <p class="panel__descr">
+              You have the option for monthly or yearly billing.
+            </p>
+            <ul>
+              <li>
+                <label for="arcade-option">
+                  <input
+                    id="arcade-option"
+                    type="radio"
+                    name="plan"
+                    value="arcade"
+                  />
+                  <img src="./assets/images/icon-arcade.svg" alt="" />
+                  <div>
+                    <p>Arcade</p>
+                    <p>$9/mo</p>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label for="advanced-option">
+                  <input
+                    id="advanced-option"
+                    type="radio"
+                    name="plan"
+                    value="advanced"
+                  />
+                  <img src="./assets/images/icon-advanced.svg" alt="" />
+                  <div>
+                    <p>Advanced</p>
+                    <p>$12/mo</p>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <label for="pro-option">
+                  <input id="pro-option" type="radio" name="plan" value="pro" />
+                  <img src="./assets/images/icon-pro.svg" alt="" />
+                  <div>
+                    <p>Pro</p>
+                    <p>$15/mo</p>
+                  </div>
+                </label>
+              </li>
+            </ul>
+            <div>
+              <label for="monthly-option">
+                Monthly
+                <input
+                  id="monthly-option"
+                  type="radio"
+                  name="billing"
+                  value="monthly"
+                />
+              </label>
+              <div id="billing-toggle">
+                <div></div>
+              </div>
+              <label for="yearly-option">
+                Yearly
+                <input
+                  id="yearly-option"
+                  type="radio"
+                  name="billing"
+                  value="yearly"
+                />
+              </label>
+            </div>
           </fieldset>
-          <fieldset id="add-ons-form" class="hidden" data-step-panel="3">
+          <fieldset id="add-ons-panel" class="hidden" data-step-panel="3">
             <legend>Pick add-ons</legend>
           </fieldset>
-          <fieldset id="summary-form" class="hidden" data-step-panel="4">
+          <fieldset id="summary-panel" class="hidden" data-step-panel="4">
             <legend>Finishing up</legend>
           </fieldset>
           <div
