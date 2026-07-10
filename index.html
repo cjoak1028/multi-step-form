@@ -171,26 +171,43 @@
                 </label>
               </li>
             </ul>
-            <div>
-              <label for="monthly-option">
+            <div
+              class="flex justify-center items-center gap-6 rounded-lg h-12 bg-blue-50"
+            >
+              <label
+                for="monthly-option"
+                class="peer text-preset-4-medium text-grey-500 has-checked:text-blue-950 cursor-pointer"
+              >
                 Monthly
                 <input
                   id="monthly-option"
                   type="radio"
                   name="billing"
                   value="monthly"
+                  class="sr-only"
+                  checked
                 />
               </label>
-              <div id="billing-toggle">
-                <div></div>
+              <div
+                id="toggle-track"
+                class="flex items-center w-[2.375rem] h-5 rounded-[0.625rem] bg-blue-950 px-1 justify-end peer-has-checked:justify-start"
+              >
+                <div
+                  id="toggle-thumb"
+                  class="rounded-full bg-white size-3"
+                ></div>
               </div>
-              <label for="yearly-option">
+              <label
+                for="yearly-option"
+                class="text-preset-4-medium text-grey-500 has-checked:text-blue-950 cursor-pointer"
+              >
                 Yearly
                 <input
                   id="yearly-option"
                   type="radio"
                   name="billing"
                   value="yearly"
+                  class="sr-only"
                 />
               </label>
             </div>
