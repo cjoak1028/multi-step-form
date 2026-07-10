@@ -1,6 +1,9 @@
 const nextBtn = document.querySelector("#next-btn");
 const backBtn = document.querySelector("#back-btn");
 const confirmBtn = document.querySelector("#confirm-btn");
+const billingToggle = document.querySelector("#billing-toggle");
+const monthlyOption = document.querySelector("#monthly-option");
+const yearlyOption = document.querySelector("#yearly-option");
 
 let curStep = 1;
 
@@ -54,5 +57,13 @@ backBtn.addEventListener("click", () => {
   if (nextStep === 3) {
     nextBtn.classList.remove("hidden");
     confirmBtn.classList.add("hidden");
+  }
+});
+
+billingToggle.addEventListener("click", () => {
+  if (monthlyOption.checked) {
+    yearlyOption.checked = true;
+  } else {
+    monthlyOption.checked = true;
   }
 });
