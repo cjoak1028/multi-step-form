@@ -152,12 +152,15 @@
 .plan-card {
   @apply flex items-center gap-4 
         border border-purple-200 rounded-lg 
-        px-4 py-5;
+        h-20
+        px-4;
 
   @apply has-checked:border-purple-600 
         has-checked:bg-blue-50;
 
   @apply lg:flex-col
+        lg:justify-center
         lg:items-start
-        lg:gap-12;
+        lg:gap-12
+        lg:h-40;
 }

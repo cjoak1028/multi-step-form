@@ -277,9 +277,6 @@
   .justify-end {
     justify-content: flex-end;
   }
-  .justify-start {
-    justify-content: flex-start;
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -380,11 +377,6 @@
   .peer-has-checked\:justify-start {
     &:is(:where(.peer):has(*:checked) ~ *) {
       justify-content: flex-start;
-    }
-  }
-  .peer-has-checked\/yearly\:justify-end {
-    &:is(:where(.peer\/yearly):has(*:checked) ~ *) {
-      justify-content: flex-end;
     }
   }
   .has-checked\:text-blue-950 {
@@ -522,14 +514,19 @@
       padding-inline: calc(var(--spacing) * 12);
     }
   }
-  .md\:py-8 {
-    @media (width >= 48rem) {
-      padding-block: calc(var(--spacing) * 8);
-    }
-  }
   .md\:py-10 {
     @media (width >= 48rem) {
       padding-block: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:pt-6 {
+    @media (width >= 48rem) {
+      padding-top: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:pb-4 {
+    @media (width >= 48rem) {
+      padding-bottom: calc(var(--spacing) * 4);
     }
   }
   .lg\:mb-8 {
@@ -712,6 +709,7 @@
 }
 .plan-card {
   display: flex;
+  height: calc(var(--spacing) * 20);
   align-items: center;
   gap: calc(var(--spacing) * 4);
   border-radius: var(--radius-lg);
@@ -719,7 +717,6 @@
   border-width: 1px;
   border-color: var(--color-purple-200);
   padding-inline: calc(var(--spacing) * 4);
-  padding-block: calc(var(--spacing) * 5);
   &:has(*:checked) {
     border-color: var(--color-purple-600);
   }
@@ -727,10 +724,16 @@
     background-color: var(--color-blue-50);
   }
   @media (width >= 64rem) {
+    height: calc(var(--spacing) * 40);
+  }
+  @media (width >= 64rem) {
     flex-direction: column;
   }
   @media (width >= 64rem) {
     align-items: flex-start;
+  }
+  @media (width >= 64rem) {
+    justify-content: center;
   }
   @media (width >= 64rem) {
     gap: calc(var(--spacing) * 12);
