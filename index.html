@@ -73,6 +73,7 @@
           method="post"
           class="flex flex-col justify-between m-auto rounded-[0.625rem] h-full bg-white px-6 py-8 md:max-w-[28.125rem] md:p-0"
         >
+          <!-- Info panel -->
           <fieldset id="info-panel" data-step-panel="1">
             <legend class="panel__heading">Personal info</legend>
             <p class="panel__descr">
@@ -111,49 +112,61 @@
               required
             />
           </fieldset>
+          <!-- Plan panel -->
           <fieldset id="plan-panel" class="hidden" data-step-panel="2">
             <legend class="panel__heading">Select your plan</legend>
             <p class="panel__descr">
               You have the option for monthly or yearly billing.
             </p>
-            <ul>
-              <li>
-                <label for="arcade-option">
+            <ul
+              class="flex flex-col gap-2 mb-6 lg:flex-row lg:gap-[1.125rem] lg:mb-8"
+            >
+              <li class="flex-1">
+                <label for="arcade-option" class="plan-card">
                   <input
                     id="arcade-option"
                     type="radio"
                     name="plan"
                     value="arcade"
+                    class="sr-only"
+                    checked
                   />
                   <img src="./assets/images/icon-arcade.svg" alt="" />
                   <div>
-                    <p>Arcade</p>
-                    <p>$9/mo</p>
+                    <p class="text-preset-3-medium">Arcade</p>
+                    <p class="text-preset-4-regular text-grey-500">$9/mo</p>
                   </div>
                 </label>
               </li>
-              <li>
-                <label for="advanced-option">
+              <li class="flex-1">
+                <label for="advanced-option" class="plan-card">
                   <input
                     id="advanced-option"
                     type="radio"
                     name="plan"
                     value="advanced"
+                    class="sr-only"
                   />
                   <img src="./assets/images/icon-advanced.svg" alt="" />
                   <div>
-                    <p>Advanced</p>
-                    <p>$12/mo</p>
+                    <p class="text-preset-3-medium">Advanced</p>
+                    <p class="text-preset-4-regular text-grey-500">$12/mo</p>
                   </div>
                 </label>
               </li>
-              <li>
-                <label for="pro-option">
-                  <input id="pro-option" type="radio" name="plan" value="pro" />
+              <li class="flex-1">
+                <label for="pro-option" class="plan-card">
+                  <input
+                    id="pro-option"
+                    type="radio"
+                    name="plan"
+                    value="pro"
+                    class="sr-only"
+                  />
                   <img src="./assets/images/icon-pro.svg" alt="" />
                   <div>
-                    <p>Pro</p>
-                    <p>$15/mo</p>
+                    <p class="text-preset-3-medium">Pro</p>
+                    <p class="text-preset-4-regular text-grey-500">$15/mo</p>
                   </div>
                 </label>
               </li>
