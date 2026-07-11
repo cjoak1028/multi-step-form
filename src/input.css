@@ -153,7 +153,8 @@
   @apply flex items-center gap-4 
         border border-purple-200 rounded-lg 
         h-20
-        px-4;
+        px-4
+        cursor-pointer;
 
   @apply has-checked:border-purple-600 
         has-checked:bg-blue-50;

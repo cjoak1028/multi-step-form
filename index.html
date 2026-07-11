@@ -210,8 +210,59 @@
               </label>
             </div>
           </fieldset>
+          <!-- Add on panel -->
           <fieldset id="add-ons-panel" class="hidden" data-step-panel="3">
-            <legend>Pick add-ons</legend>
+            <legend class="panel__heading">Pick add-ons</legend>
+            <p class="panel__descr">
+              You have the option for monthly or yearly billing.
+            </p>
+            <ul>
+              <li>
+                <label for="online-checkbox">
+                  <input
+                    type="checkbox"
+                    name="addon"
+                    id="online-checkbox"
+                    value="online"
+                  />
+                  <div>
+                    <p>Online service</p>
+                    <p>Access to multiplayer games</p>
+                  </div>
+                  <p>+$1/mo</p>
+                </label>
+              </li>
+              <li>
+                <label for="storage-checkbox">
+                  <input
+                    type="checkbox"
+                    name="addon"
+                    id="storage-checkbox"
+                    value="storage"
+                  />
+                  <div>
+                    <p>Larger storage</p>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
+                  <p>+$2/mo</p>
+                </label>
+              </li>
+              <li>
+                <label for="profile-checkbox">
+                  <input
+                    type="checkbox"
+                    name="addon"
+                    id="profile-checkbox"
+                    value="profile"
+                  />
+                  <div>
+                    <p>Customizable profile</p>
+                    <p>Custom theme on your profile</p>
+                  </div>
+                  <p>+$2/mo</p>
+                </label>
+              </li>
+            </ul>
           </fieldset>
           <fieldset id="summary-panel" class="hidden" data-step-panel="4">
             <legend>Finishing up</legend>
