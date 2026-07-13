@@ -165,3 +165,24 @@
         lg:gap-12
         lg:h-40;
 }
+
+.addon-card {
+  @apply flex justify-between items-center 
+        h-[3.875rem] 
+        border border-purple-200 rounded-lg 
+        px-4;
+
+  @apply has-checked:bg-blue-50 
+        has-checked:border-purple-600;
+
+  @apply md:h-[5.0625rem];
+}
+
+.addon-card__checkbox {
+  @apply appearance-none 
+        size-5 
+        border border-purple-200 rounded-sm;
+
+  @apply checked:border-none 
+        checked:bg-purple-600 checked:bg-[url(./assets/images/icon-checkmark.svg)] checked:bg-no-repeat checked:bg-center;
+}

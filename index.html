@@ -171,6 +171,7 @@
                 </label>
               </li>
             </ul>
+            <!-- Billing cycle toggle -->
             <div
               class="flex justify-center items-center gap-6 rounded-lg h-12 bg-blue-50"
             >
@@ -188,7 +189,6 @@
                   checked
                 />
               </label>
-              <!-- Billing cycle toggle -->
               <div
                 id="billing-toggle"
                 class="cursor-pointer flex items-center w-[2.375rem] h-5 rounded-[0.625rem] bg-blue-950 px-1 justify-end peer-has-checked:justify-start"
@@ -214,52 +214,97 @@
           <fieldset id="add-ons-panel" class="hidden" data-step-panel="3">
             <legend class="panel__heading">Pick add-ons</legend>
             <p class="panel__descr">
-              You have the option for monthly or yearly billing.
+              Add-ons help enhance your gaming experience.
             </p>
-            <ul>
+            <ul class="flex flex-col gap-2 md:gap-4">
               <li>
-                <label for="online-checkbox">
-                  <input
-                    type="checkbox"
-                    name="addon"
-                    id="online-checkbox"
-                    value="online"
-                  />
-                  <div>
-                    <p>Online service</p>
-                    <p>Access to multiplayer games</p>
+                <label for="online-checkbox" class="addon-card">
+                  <div class="flex items-center gap-4 md:gap-6">
+                    <input
+                      type="checkbox"
+                      name="addon"
+                      id="online-checkbox"
+                      value="online"
+                      class="addon-card__checkbox"
+                    />
+                    <div>
+                      <p
+                        class="text-preset-4-medium md:mb-2 md:text-preset-3-medium"
+                      >
+                        Online service
+                      </p>
+                      <p
+                        class="text-preset-5 text-grey-500 md:text-preset-4-regular"
+                      >
+                        Access to multiplayer games
+                      </p>
+                    </div>
                   </div>
-                  <p>+$1/mo</p>
+                  <p
+                    class="text-preset-5 text-purple-600 md:text-preset-4-regular"
+                  >
+                    +$1/mo
+                  </p>
                 </label>
               </li>
               <li>
-                <label for="storage-checkbox">
-                  <input
-                    type="checkbox"
-                    name="addon"
-                    id="storage-checkbox"
-                    value="storage"
-                  />
-                  <div>
-                    <p>Larger storage</p>
-                    <p>Extra 1TB of cloud save</p>
+                <label for="storage-checkbox" class="addon-card">
+                  <div class="flex items-center gap-4 md:gap-6">
+                    <input
+                      type="checkbox"
+                      name="addon"
+                      id="storage-checkbox"
+                      value="storage"
+                      class="addon-card__checkbox"
+                    />
+                    <div>
+                      <p
+                        class="text-preset-4-medium md:mb-2 md:text-preset-3-medium"
+                      >
+                        Larger storage
+                      </p>
+                      <p
+                        class="text-preset-5 text-grey-500 md:text-preset-4-regular"
+                      >
+                        Extra 1TB of cloud save
+                      </p>
+                    </div>
                   </div>
-                  <p>+$2/mo</p>
+                  <p
+                    class="text-preset-5 text-purple-600 md:text-preset-4-regular"
+                  >
+                    +$2/mo
+                  </p>
                 </label>
               </li>
               <li>
-                <label for="profile-checkbox">
-                  <input
-                    type="checkbox"
-                    name="addon"
-                    id="profile-checkbox"
-                    value="profile"
-                  />
-                  <div>
-                    <p>Customizable profile</p>
-                    <p>Custom theme on your profile</p>
+                <label for="profile-checkbox" class="addon-card">
+                  <div class="flex items-center gap-4 md:gap-6">
+                    <input
+                      type="checkbox"
+                      name="addon"
+                      id="profile-checkbox"
+                      value="profile"
+                      class="addon-card__checkbox"
+                    />
+                    <div>
+                      <p
+                        class="text-preset-4-medium md:mb-2 md:text-preset-3-medium"
+                      >
+                        Customizable profile
+                      </p>
+                      <p
+                        class="text-preset-5 text-grey-500 md:text-preset-4-regular"
+                      >
+                        Custom theme on your profile
+                      </p>
+                    </div>
                   </div>
-                  <p>+$2/mo</p>
+                  <p
+                    class="text-preset-5 text-purple-600 md:text-preset-4-regular"
+                  >
+                    +$2/mo
+                  </p>
                 </label>
               </li>
             </ul>
