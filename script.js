@@ -10,11 +10,13 @@ const proPrice = document.querySelector("#pro-price");
 const onlinePrice = document.querySelector("#online-price");
 const storagePrice = document.querySelector("#storage-price");
 const profilePrice = document.querySelector("#profile-price");
+const planPanel = document.querySelector("#plan-panel");
+const addonPanel = document.querySelector("#addon-panel");
 
 let curStep = 1;
 
 const state = {
-  billingCycle: "monthly",
+  billingCycle: "mo",
   selectedPlan: "arcade",
   selectedAddons: [],
 };
@@ -123,22 +125,42 @@ backBtn.addEventListener("click", () => {
   }
 });
 
+// TODO: Refactor toggle logic
 billingToggle.addEventListener("click", () => {
   if (monthlyOption.checked) {
     yearlyOption.checked = true;
     render("yr");
+    state.billingCycle = "yr";
   } else {
     monthlyOption.checked = true;
     render("mo");
+    state.billingCycle = "mo";
   }
 });
 
 monthlyOption.addEventListener("change", () => {
   render("mo");
+  state.billingCycle = "mo";
 });
 
 yearlyOption.addEventListener("change", () => {
   render("yr");
+  state.billingCycle = "yr";
+});
+
+planPanel.addEventListener("change", (e) => {
+  if (!e.target.matches('input[name="plan"]')) return;
+
+  state.selectedPlan = e.target.value;
+});
+
+addonPanel.addEventListener("change", (e) => {
+  if (!e.target.matches('input[name="addon"]')) return;
+
+  // To maintain order in which add-on options are displayed
+  state.selectedAddons = [
+    ...addonPanel.querySelectorAll('input[name="addon"]:checked'),
+  ].map((checkbox) => checkbox.value);
 });
 
 init();
