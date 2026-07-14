@@ -16,6 +16,8 @@ const summarySelectedPlan = document.querySelector("#summary-selected-plan");
 const summaryPlanPrice = document.querySelector("#summary-plan-price");
 const summarySeparator = document.querySelector("#summary-separator");
 const summaryAddonList = document.querySelector("#summary-addon-list");
+const summaryTotalCycle = document.querySelector("#summary-total-cycle");
+const summaryTotalPrice = document.querySelector("#summary-total-price");
 
 let curStep = 1;
 
@@ -112,6 +114,9 @@ const renderSummary = () => {
   const cycle = state.billingCycle;
   const selectedPlan = state.selectedPlan;
   const selectedAddons = state.selectedAddons;
+  let totalPrice = plans[selectedPlan].price[cycle];
+  let addonListItems = "";
+
   summarySelectedPlan.textContent = `${plans[selectedPlan].name} (${cycle === "mo" ? "Monthly" : "Yearly"})`;
   summaryPlanPrice.textContent = `$${plans[selectedPlan].price[cycle]}/${cycle}`;
 
@@ -121,7 +126,6 @@ const renderSummary = () => {
     summarySeparator.classList.remove("hidden");
   }
 
-  let addonListItems = "";
   for (let addon of selectedAddons) {
     addonListItems += `<li class="flex justify-between items-center">
                         <p class="text-preset-4-regular text-grey-500">
@@ -129,8 +133,12 @@ const renderSummary = () => {
                         </p>
                         <p class="text-preset-4-regular">+$${addons[addon].price[cycle]}/${cycle}</p>
                       </li>`;
+    totalPrice += addons[addon].price[cycle];
   }
+
   summaryAddonList.innerHTML = addonListItems;
+  summaryTotalCycle.textContent = cycle === "mo" ? "month" : "year";
+  summaryTotalPrice.textContent = `$${totalPrice}/${cycle}`;
 };
 
 const renderAll = () => {
