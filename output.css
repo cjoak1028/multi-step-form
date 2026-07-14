@@ -411,6 +411,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .capitalize {
+    text-transform: capitalize;
+  }
   .opacity-21 {
     opacity: 21%;
   }

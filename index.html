@@ -335,19 +335,25 @@
             <div class="mb-6 bg-blue-50 p-4">
               <div class="flex justify-between items-center">
                 <div>
-                  <p class="text-preset-4-medium">Arcade (Monthly)</p>
+                  <p id="summary-selected-plan" class="text-preset-4-medium">
+                    Arcade (Monthly)
+                  </p>
                   <button
+                    id="change-plan-btn"
                     type="button"
                     class="cursor-pointer text-preset-4-regular text-grey-500"
                   >
                     Change
                   </button>
                 </div>
-                <p class="text-preset-4-bold">$9/mo</p>
+                <p id="summary-plan-price" class="text-preset-4-bold">$9/mo</p>
               </div>
-              <hr class="my-4 border-grey-500 opacity-21" />
-              <ul class="flex flex-col gap-4">
-                <li class="flex justify-between items-center">
+              <hr
+                id="summary-separator"
+                class="my-4 border-grey-500 opacity-21 hidden"
+              />
+              <ul id="summary-addon-list" class="flex flex-col gap-4">
+                <!-- <li class="flex justify-between items-center">
                   <p class="text-preset-4-regular text-grey-500">
                     Online service
                   </p>
@@ -358,14 +364,16 @@
                     Larger storage
                   </p>
                   <p class="text-preset-4-regular">+$2/mo</p>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="flex justify-between items-center px-4">
               <p class="text-preset-4-regular text-grey-500">
-                Total (per month)
+                Total (per <span id="total-cycle">month</span>)
               </p>
-              <p class="text-base/5 font-bold text-purple-600">+$12/mo</p>
+              <p id="total-price" class="text-base/5 font-bold text-purple-600">
+                +$12/mo
+              </p>
             </div>
           </div>
           <div

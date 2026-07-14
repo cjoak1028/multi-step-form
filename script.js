@@ -12,6 +12,10 @@ const storagePrice = document.querySelector("#storage-price");
 const profilePrice = document.querySelector("#profile-price");
 const planPanel = document.querySelector("#plan-panel");
 const addonPanel = document.querySelector("#addon-panel");
+const summarySelectedPlan = document.querySelector("#summary-selected-plan");
+const summaryPlanPrice = document.querySelector("#summary-plan-price");
+const summarySeparator = document.querySelector("#summary-separator");
+const summaryAddonList = document.querySelector("#summary-addon-list");
 
 let curStep = 1;
 
@@ -23,31 +27,49 @@ const state = {
 
 const plans = {
   arcade: {
-    mo: 9,
-    yr: 90,
+    name: "Arcade",
+    price: {
+      mo: 9,
+      yr: 90,
+    },
   },
   advanced: {
-    mo: 12,
-    yr: 120,
+    name: "Advanced",
+    price: {
+      mo: 12,
+      yr: 120,
+    },
   },
   pro: {
-    mo: 15,
-    yr: 150,
+    name: "Pro",
+    price: {
+      mo: 15,
+      yr: 150,
+    },
   },
 };
 
 const addons = {
   online: {
-    mo: 1,
-    yr: 10,
+    name: "Online service",
+    price: {
+      mo: 1,
+      yr: 10,
+    },
   },
   storage: {
-    mo: 2,
-    yr: 20,
+    name: "Larger storage",
+    price: {
+      mo: 2,
+      yr: 20,
+    },
   },
   profile: {
-    mo: 2,
-    yr: 20,
+    name: "Customizable profile",
+    price: {
+      mo: 2,
+      yr: 20,
+    },
   },
 };
 
@@ -72,25 +94,53 @@ const goNextStep = (step, reverse = false) => {
   return nextStep;
 };
 
-const renderPlans = (cycle = "mo") => {
-  arcadePrice.textContent = `$${plans.arcade[cycle]}/${cycle}`;
-  advancedPrice.textContent = `$${plans.advanced[cycle]}/${cycle}`;
-  proPrice.textContent = `$${plans.pro[cycle]}/${cycle}`;
+const renderPlans = () => {
+  const cycle = state.billingCycle;
+  arcadePrice.textContent = `$${plans.arcade.price[cycle]}/${cycle}`;
+  advancedPrice.textContent = `$${plans.advanced.price[cycle]}/${cycle}`;
+  proPrice.textContent = `$${plans.pro.price[cycle]}/${cycle}`;
 };
 
-const renderAddons = (cycle = "mo") => {
-  onlinePrice.textContent = `+$${addons.online[cycle]}/${cycle}`;
-  storagePrice.textContent = `+$${addons.storage[cycle]}/${cycle}`;
-  profilePrice.textContent = `+$${addons.profile[cycle]}/${cycle}`;
+const renderAddons = () => {
+  const cycle = state.billingCycle;
+  onlinePrice.textContent = `+$${addons.online.price[cycle]}/${cycle}`;
+  storagePrice.textContent = `+$${addons.storage.price[cycle]}/${cycle}`;
+  profilePrice.textContent = `+$${addons.profile.price[cycle]}/${cycle}`;
 };
 
-const render = (cycle = "mo") => {
-  renderPlans(cycle);
-  renderAddons(cycle);
+const renderSummary = () => {
+  const cycle = state.billingCycle;
+  const selectedPlan = state.selectedPlan;
+  const selectedAddons = state.selectedAddons;
+  summarySelectedPlan.textContent = `${plans[selectedPlan].name} (${cycle === "mo" ? "Monthly" : "Yearly"})`;
+  summaryPlanPrice.textContent = `$${plans[selectedPlan].price[cycle]}/${cycle}`;
+
+  if (selectedAddons.length === 0) {
+    summarySeparator.classList.add("hidden");
+  } else {
+    summarySeparator.classList.remove("hidden");
+  }
+
+  let addonListItems = "";
+  for (let addon of selectedAddons) {
+    addonListItems += `<li class="flex justify-between items-center">
+                        <p class="text-preset-4-regular text-grey-500">
+                          ${addons[addon].name}
+                        </p>
+                        <p class="text-preset-4-regular">+$${addons[addon].price[cycle]}/${cycle}</p>
+                      </li>`;
+  }
+  summaryAddonList.innerHTML = addonListItems;
+};
+
+const renderAll = () => {
+  renderPlans();
+  renderAddons();
+  renderSummary();
 };
 
 const init = () => {
-  render();
+  renderAll();
 };
 
 nextBtn.addEventListener("click", () => {
@@ -129,29 +179,31 @@ backBtn.addEventListener("click", () => {
 billingToggle.addEventListener("click", () => {
   if (monthlyOption.checked) {
     yearlyOption.checked = true;
-    render("yr");
     state.billingCycle = "yr";
+    renderAll();
   } else {
     monthlyOption.checked = true;
-    render("mo");
     state.billingCycle = "mo";
+    renderAll();
   }
 });
 
 monthlyOption.addEventListener("change", () => {
-  render("mo");
   state.billingCycle = "mo";
+  renderAll();
 });
 
 yearlyOption.addEventListener("change", () => {
-  render("yr");
   state.billingCycle = "yr";
+  renderAll();
 });
 
 planPanel.addEventListener("change", (e) => {
   if (!e.target.matches('input[name="plan"]')) return;
 
   state.selectedPlan = e.target.value;
+
+  renderSummary();
 });
 
 addonPanel.addEventListener("change", (e) => {
@@ -161,6 +213,8 @@ addonPanel.addEventListener("change", (e) => {
   state.selectedAddons = [
     ...addonPanel.querySelectorAll('input[name="addon"]:checked'),
   ].map((checkbox) => checkbox.value);
+
+  renderSummary();
 });
 
 init();
