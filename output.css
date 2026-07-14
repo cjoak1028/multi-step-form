@@ -207,8 +207,14 @@
   .m-auto {
     margin: auto;
   }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
   .-mt-\[4\.688rem\] {
     margin-top: calc(4.688rem * -1);
+  }
+  .mt-0 {
+    margin-top: 0;
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -295,6 +301,9 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .border-grey-500 {
+    border-color: var(--color-grey-500);
+  }
   .bg-blue-50 {
     background-color: var(--color-blue-50);
   }
@@ -322,6 +331,9 @@
   .bg-no-repeat {
     background-repeat: no-repeat;
   }
+  .stroke-grey-500 {
+    stroke: var(--color-grey-500);
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -342,6 +354,14 @@
   }
   .font-ubuntu {
     font-family: var(--font-ubuntu);
+  }
+  .text-preset-4-bold {
+    font-size: var(--text-sm);
+    line-height: 1.2;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    --tw-tracking: 0.063rem;
+    letter-spacing: 0.063rem;
   }
   .text-preset-3-medium {
     font-size: var(--text-base);
@@ -367,6 +387,18 @@
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
   }
+  .text-base\/5 {
+    font-size: var(--text-base);
+    line-height: calc(var(--spacing) * 5);
+  }
+  .text-base\/10 {
+    font-size: var(--text-base);
+    line-height: calc(var(--spacing) * 10);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
   .text-blue-950 {
     color: var(--color-blue-950);
   }
@@ -378,6 +410,9 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .opacity-21 {
+    opacity: 21%;
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -849,6 +884,10 @@
   syntax: "*";
   inherits: false;
 }
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -859,10 +898,6 @@
   inherits: false;
   initial-value: solid;
 }
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -872,9 +907,9 @@
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-font-weight: initial;
+      --tw-tracking: initial;
       --tw-outline-style: solid;
       --tw-border-style: solid;
-      --tw-tracking: initial;
     }
   }
 }
