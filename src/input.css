@@ -93,14 +93,17 @@
 
 .form-text-input {
   @apply border border-purple-200 rounded-sm
-  w-full
-  px-4 py-[0.594rem] 
-  text-preset-4-medium;
+        w-full
+        px-4 py-[0.594rem] 
+        text-preset-4-medium;
 
   @apply placeholder:text-grey-500;
 
+  @apply focus:outline-0
+        focus:border-purple-600;
+
   @apply md:py-[0.906rem] 
-  md:text-preset-3-medium;
+        md:text-preset-3-medium;
 }
 
 .form-text-input__label {
@@ -159,6 +162,8 @@
   @apply has-checked:border-purple-600 
         has-checked:bg-blue-50;
 
+  @apply hover:border-purple-600;
+
   @apply lg:flex-col
         lg:justify-center
         lg:items-start
@@ -170,10 +175,13 @@
   @apply flex justify-between items-center 
         h-[3.875rem] 
         border border-purple-200 rounded-lg 
-        px-4;
+        px-4
+        cursor-pointer;
 
   @apply has-checked:bg-blue-50 
         has-checked:border-purple-600;
+
+  @apply hover:border-purple-600;
 
   @apply md:h-[5.0625rem];
 }

@@ -13,6 +13,7 @@
     --color-blue-300: #abbcff;
     --color-blue-950: #022959;
     --color-purple-200: #d6d9e6;
+    --color-purple-400: #928cff;
     --color-purple-600: #483eff;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -213,9 +214,6 @@
   .-mt-\[4\.688rem\] {
     margin-top: calc(4.688rem * -1);
   }
-  .mt-0 {
-    margin-top: 0;
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -331,9 +329,6 @@
   .bg-no-repeat {
     background-repeat: no-repeat;
   }
-  .stroke-grey-500 {
-    stroke: var(--color-grey-500);
-  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
@@ -391,10 +386,6 @@
     font-size: var(--text-base);
     line-height: calc(var(--spacing) * 5);
   }
-  .text-base\/10 {
-    font-size: var(--text-base);
-    line-height: calc(var(--spacing) * 10);
-  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -411,9 +402,6 @@
   .text-white {
     color: var(--color-white);
   }
-  .capitalize {
-    text-transform: capitalize;
-  }
   .opacity-21 {
     opacity: 21%;
   }
@@ -424,6 +412,20 @@
   .peer-has-checked\:justify-start {
     &:is(:where(.peer):has(*:checked) ~ *) {
       justify-content: flex-start;
+    }
+  }
+  .hover\:bg-purple-400 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-purple-400);
+      }
+    }
+  }
+  .hover\:text-blue-950 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-blue-950);
+      }
     }
   }
   .has-checked\:text-blue-950 {
@@ -685,6 +687,13 @@
   &::placeholder {
     color: var(--color-grey-500);
   }
+  &:focus {
+    border-color: var(--color-purple-600);
+  }
+  &:focus {
+    outline-style: var(--tw-outline-style);
+    outline-width: 0px;
+  }
   @media (width >= 48rem) {
     padding-block: 0.906rem;
   }
@@ -802,6 +811,11 @@
   &:has(*:checked) {
     background-color: var(--color-blue-50);
   }
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--color-purple-600);
+    }
+  }
   @media (width >= 64rem) {
     height: calc(var(--spacing) * 40);
   }
@@ -821,6 +835,7 @@
 .addon-card {
   display: flex;
   height: 3.875rem;
+  cursor: pointer;
   align-items: center;
   justify-content: space-between;
   border-radius: var(--radius-lg);
@@ -833,6 +848,11 @@
   }
   &:has(*:checked) {
     background-color: var(--color-blue-50);
+  }
+  &:hover {
+    @media (hover: hover) {
+      border-color: var(--color-purple-600);
+    }
   }
   @media (width >= 48rem) {
     height: 5.0625rem;
