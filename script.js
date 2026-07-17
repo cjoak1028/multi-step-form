@@ -238,4 +238,16 @@ formFields.forEach((field) => {
   });
 });
 
+multiStepForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const summaryContent = document.querySelector("#summary-panel__content");
+  const summaryThankyou = document.querySelector("#summary-panel__thankyou");
+  const buttons = document.querySelector("#buttons-container");
+
+  summaryContent.classList.add("hidden");
+  summaryThankyou.classList.remove("hidden");
+  buttons.classList.add("hidden");
+});
+
 init();
