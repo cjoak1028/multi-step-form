@@ -194,3 +194,7 @@
   @apply checked:border-none 
         checked:bg-purple-600 checked:bg-[url(./assets/images/icon-checkmark.svg)] checked:bg-no-repeat checked:bg-center;
 }
+
+.input-warning {
+  @apply text-preset-4-bold text-red-500;
+}

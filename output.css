@@ -7,10 +7,12 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: #ee374a;
     --color-blue-50: #f8f9ff;
     --color-blue-100: #eff5ff;
     --color-blue-200: #bee2fd;
     --color-blue-300: #abbcff;
+    --color-blue-700: #164a8a;
     --color-blue-950: #022959;
     --color-purple-200: #d6d9e6;
     --color-purple-400: #928cff;
@@ -299,8 +301,14 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .\!border-red-500 {
+    border-color: var(--color-red-500) !important;
+  }
   .border-grey-500 {
     border-color: var(--color-grey-500);
+  }
+  .border-red-500 {
+    border-color: var(--color-red-500);
   }
   .bg-blue-50 {
     background-color: var(--color-blue-50);
@@ -399,6 +407,9 @@
   .text-purple-600 {
     color: var(--color-purple-600);
   }
+  .text-red-500 {
+    color: var(--color-red-500);
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -412,6 +423,18 @@
   .peer-has-checked\:justify-start {
     &:is(:where(.peer):has(*:checked) ~ *) {
       justify-content: flex-start;
+    }
+  }
+  .peer-has-\[\.input-warning\:not\(\.hidden\)\]\:\!border-red-500 {
+    &:is(:where(.peer):has(*:is(.input-warning:not(.hidden))) ~ *) {
+      border-color: var(--color-red-500) !important;
+    }
+  }
+  .hover\:bg-blue-700 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-blue-700);
+      }
     }
   }
   .hover\:bg-purple-400 {
@@ -882,6 +905,15 @@
   &:checked {
     background-repeat: no-repeat;
   }
+}
+.input-warning {
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  --tw-tracking: 0.063rem;
+  letter-spacing: 0.063rem;
+  color: var(--color-red-500);
 }
 @property --tw-rotate-x {
   syntax: "*";

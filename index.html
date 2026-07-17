@@ -70,6 +70,7 @@
       </aside>
       <div class="-mt-[4.688rem] w-full px-4 md:mt-0 md:px-12 md:pt-6 md:pb-4">
         <form
+          id="multi-step-form"
           method="post"
           class="flex flex-col justify-between m-auto rounded-[0.625rem] h-full bg-white px-6 py-8 md:max-w-[28.125rem] md:p-0"
         >
@@ -79,38 +80,53 @@
             <p class="panel__descr">
               Please provide your name, email address, and phone number.
             </p>
-            <label class="form-text-input__label" for="name"> Name </label>
-            <input
-              class="form-text-input mb-4 md:mb-6"
-              type="text"
-              id="name"
-              name="name"
-              placeholder="e.g. Stephen King"
-              required
-            />
-            <label class="form-text-input__label" for="email">
-              Email Address
-            </label>
-            <input
-              class="form-text-input mb-4 md:mb-6"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="e.g. stephenking@lorem.com"
-              required
-            />
-            <label class="form-text-input__label" for="phone-number">
-              Phone Number
-            </label>
-            <input
-              class="form-text-input"
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="e.g. +1 234 567 890"
-              autocomplete="tel"
-              required
-            />
+            <div class="form-field">
+              <div class="flex justify-between">
+                <label class="form-text-input__label" for="name"> Name </label>
+                <p class="input-warning hidden">This field is required</p>
+              </div>
+              <input
+                class="form-text-input mb-4 md:mb-6"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="e.g. Stephen King"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <div class="flex justify-between">
+                <label class="form-text-input__label" for="email">
+                  Email Address
+                </label>
+                <p class="input-warning hidden">Invalid format</p>
+              </div>
+              <input
+                class="form-text-input mb-4 md:mb-6"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="e.g. stephenking@lorem.com"
+                required
+              />
+            </div>
+            <div class="form-field">
+              <div class="flex justify-between">
+                <label class="form-text-input__label" for="phone-number">
+                  Phone Number
+                </label>
+                <p class="input-warning hidden">This field is required</p>
+              </div>
+              <input
+                class="form-text-input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="e.g. +1 234 567 890"
+                autocomplete="tel"
+                required
+              />
+            </div>
           </fieldset>
           <!-- Plan panel -->
           <fieldset id="plan-panel" class="hidden" data-step-panel="2">
@@ -377,7 +393,11 @@
             >
               Go Back
             </button>
-            <button id="next-btn" type="button" class="bg-blue-950 form-btn">
+            <button
+              id="next-btn"
+              type="button"
+              class="bg-blue-950 form-btn hover:bg-blue-700"
+            >
               Next Step
             </button>
             <button

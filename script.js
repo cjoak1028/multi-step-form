@@ -19,6 +19,8 @@ const summaryAddonList = document.querySelector("#summary-addon-list");
 const summaryTotalCycle = document.querySelector("#summary-total-cycle");
 const summaryTotalPrice = document.querySelector("#summary-total-price");
 const changePlanBtn = document.querySelector("#change-plan-btn");
+const multiStepForm = document.querySelector("#multi-step-form");
+const formFields = document.querySelectorAll(".form-field");
 
 let curStep = 1;
 
@@ -166,6 +168,8 @@ const init = () => {
 };
 
 nextBtn.addEventListener("click", () => {
+  if (!multiStepForm.checkValidity()) return;
+
   goToStep(curStep + 1);
 });
 
@@ -217,6 +221,21 @@ addonPanel.addEventListener("change", (e) => {
 
 changePlanBtn.addEventListener("click", () => {
   goToStep(2);
+});
+
+formFields.forEach((field) => {
+  const input = field.querySelector("input");
+  const warning = field.querySelector(".input-warning");
+
+  input.addEventListener("invalid", () => {
+    warning.classList.remove("hidden");
+    input.classList.add("!border-red-500");
+  });
+
+  input.addEventListener("input", () => {
+    warning.classList.add("hidden");
+    input.classList.remove("!border-red-500");
+  });
 });
 
 init();
