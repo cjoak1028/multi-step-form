@@ -18,6 +18,7 @@ const summarySeparator = document.querySelector("#summary-separator");
 const summaryAddonList = document.querySelector("#summary-addon-list");
 const summaryTotalCycle = document.querySelector("#summary-total-cycle");
 const summaryTotalPrice = document.querySelector("#summary-total-price");
+const changePlanBtn = document.querySelector("#change-plan-btn");
 
 let curStep = 1;
 
@@ -75,25 +76,38 @@ const addons = {
   },
 };
 
-const goNextStep = (step, reverse = false) => {
-  const nextStep = reverse ? step - 1 : step + 1;
-
-  const activePanel = document.querySelector(`[data-step-panel="${step}"]`);
-  const nextPanel = document.querySelector(`[data-step-panel="${nextStep}"]`);
-  const activeStepIndicator = document.querySelector(
-    `[data-step-item="${step}"]`,
+const goToStep = (newStep) => {
+  const curPanel = document.querySelector(`[data-step-panel="${curStep}"]`);
+  const newPanel = document.querySelector(`[data-step-panel="${newStep}"]`);
+  const curStepIndicator = document.querySelector(
+    `[data-step-item="${curStep}"]`,
   );
-  const nextStepIndicator = document.querySelector(
-    `[data-step-item="${nextStep}"]`,
+  const newStepIndicator = document.querySelector(
+    `[data-step-item="${newStep}"]`,
   );
 
-  activePanel.classList.add("hidden");
-  nextPanel.classList.remove("hidden");
+  curPanel.classList.add("hidden");
+  newPanel.classList.remove("hidden");
 
-  activeStepIndicator.removeAttribute("data-active");
-  nextStepIndicator.setAttribute("data-active", "");
+  curStepIndicator.removeAttribute("data-active");
+  newStepIndicator.setAttribute("data-active", "");
 
-  return nextStep;
+  if (newStep === 1) {
+    backBtn.classList.add("hidden");
+    backBtn.setAttribute("data-hidden-back", "");
+    nextBtn.classList.remove("hidden");
+    confirmBtn.classList.add("hidden");
+  } else if (newStep > 1 && newStep < 4) {
+    backBtn.classList.remove("hidden");
+    backBtn.removeAttribute("data-hidden-back");
+    nextBtn.classList.remove("hidden");
+    confirmBtn.classList.add("hidden");
+  } else {
+    nextBtn.classList.add("hidden");
+    confirmBtn.classList.remove("hidden");
+  }
+
+  curStep = newStep;
 };
 
 const renderPlans = () => {
@@ -152,35 +166,11 @@ const init = () => {
 };
 
 nextBtn.addEventListener("click", () => {
-  const nextStep = goNextStep(curStep);
-
-  curStep = nextStep;
-
-  if (nextStep === 4) {
-    nextBtn.classList.add("hidden");
-    confirmBtn.classList.remove("hidden");
-  }
-
-  if (nextStep > 1) {
-    backBtn.classList.remove("hidden");
-    backBtn.removeAttribute("data-hidden-back");
-  }
+  goToStep(curStep + 1);
 });
 
 backBtn.addEventListener("click", () => {
-  const nextStep = goNextStep(curStep, true);
-
-  curStep = nextStep;
-
-  if (nextStep === 1) {
-    backBtn.classList.add("hidden");
-    backBtn.setAttribute("data-hidden-back", "");
-  }
-
-  if (nextStep === 3) {
-    nextBtn.classList.remove("hidden");
-    confirmBtn.classList.add("hidden");
-  }
+  goToStep(curStep - 1);
 });
 
 // TODO: Refactor toggle logic
@@ -223,6 +213,10 @@ addonPanel.addEventListener("change", (e) => {
   ].map((checkbox) => checkbox.value);
 
   renderSummary();
+});
+
+changePlanBtn.addEventListener("click", () => {
+  goToStep(2);
 });
 
 init();
